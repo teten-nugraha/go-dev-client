@@ -10,6 +10,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [password_confirmation, setPasswordConfirmation] = useState('');
   
+  // redirect
   const[redirect, setRedirect] = useState(false);
 
   const submit = async(e) => {
@@ -73,7 +74,7 @@ const Signup = () => {
 
         <br />
         <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p className="mt-5 mb-3 text-muted text-center">© 2017-2021</p>
+        <p className="mt-5 mb-3 text-muted text-center">© 2022</p>
     </form>
   )
 }
