@@ -20,6 +20,7 @@ const Todos = () => {
                 }).then(({ data }) => {
                     
                     setDatas(data.todos);
+                    console.log(datas);
 
                 });
 
@@ -51,6 +52,7 @@ const Todos = () => {
                     <table class="table table-striped">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Todo Name</th>
                                 <th>Created At</th>
                                 <th>Action</th>
@@ -58,42 +60,18 @@ const Todos = () => {
                         </thead>
                         <tbody>
                             
-                            <tr>
+                            {datas.map(function(value, index){
+                                return  <tr>
+                                            <td>{value.Id}</td>
+                                            <td>{value.Name}</td>
+                                            <td>{value.CreatedAt}</td>
+                                            <td>
+                                                <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                                <a class="btn btn-danger btn-action" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                            })}
 
-                                <td>Ecommerce website</td>
-                                <td>2018-01-20</td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td>Android App</td>
-                                <td>2018-09-11</td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td>Logo Design</td>
-                                <td>2018-04-12</td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td>Java Project</td>
-                                <td>2018-01-20</td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
