@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a className="navbar-brand" href="#">Go Productify</a>
